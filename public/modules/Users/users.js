@@ -27,9 +27,13 @@ export default class Users extends React.Component {
             url: "http://localhost:3000/users/showUser",
             success: function (data) {
                 var data = JSON.parse(data)
-                this.setState({
-                    data: data
-                })
+                console.log(data)
+                if (data.data.length > 0) {
+                     this.setState({
+                        data: data.data
+                    })
+                }
+               
             }.bind(this)
         })
     };
